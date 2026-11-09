@@ -162,6 +162,18 @@
   .cred svg{width:34px;flex:none;color:var(--green)}
   @media (max-width:900px){.story .wrap{grid-template-columns:1fr;gap:48px}.story .polaroid{margin-inline:auto}}
 
+  /* DOGWALKER */
+  .walk{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:110px}
+  .walk h3{font-size:clamp(1.8rem,4vw,2.6rem);margin:10px 0 14px}
+  .walk h3 em{font-style:italic;color:var(--orange)}
+  .walk p{color:var(--ink-soft);font-size:1.08rem}
+  .walk-pols{position:relative;height:540px}
+  .walk-pols .polaroid{position:absolute;width:54%}
+  .walk-pols .wp1{left:0;top:0;transform:rotate(-4deg)}
+  .walk-pols .wp2{right:0;top:36px;transform:rotate(3.5deg)}
+  .walk-pols .wp3{left:23%;bottom:0;transform:rotate(-1deg);z-index:2}
+  @media (max-width:860px){.walk{grid-template-columns:1fr;gap:28px;margin-top:80px}.walk-pols{height:auto;aspect-ratio:1/1.05;max-width:420px;width:100%;margin-inline:auto}.walk-pols .polaroid{padding:9px 9px 36px}.walk-pols figcaption{font-size:1rem}}
+
   /* TRUST STRIP */
   .trust{padding:46px 0 0}
   .trust ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 14px}
@@ -393,6 +405,20 @@
         </blockquote></div>
       </div>
     </div>
+    <div class="walk reveal">
+      <div class="walk-pols">
+        <figure class="polaroid wp1"><img src="img/golden.jpg" alt="Golden retriever sorrindo na grama, de guia, durante o passeio" loading="lazy"><figcaption>passeio feito ♥</figcaption></figure>
+        <figure class="polaroid wp2"><img src="img/passeio-dupla.jpg" alt="Cuidadora da Dompet no parque com um husky e um border collie" loading="lazy"><figcaption>passeio em dupla</figcaption></figure>
+        <figure class="polaroid wp3"><img src="img/passeio-cidade.jpg" alt="Cuidadora da Dompet de camiseta laranja com um cachorro na calçada" loading="lazy"><figcaption>volta no quarteirão</figcaption></figure>
+      </div>
+      <div>
+        <span class="eyebrow">Dogwalker</span>
+        <h3>Passeio também é <em>saúde</em></h3>
+        <p>Caminhadas regulares ajudam no gasto de energia, no controle do peso, no condicionamento físico e no bem-estar mental. Cada passeio é um passo para uma vida mais saudável, ativa e feliz. 🐾</p>
+        <p class="hand" style="margin-top:14px">seu cão está se movimentando o suficiente?</p>
+        <a class="btn" style="margin-top:22px" href="https://contate.me/dompetcare" target="_blank" rel="noopener">Agendar passeios</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -472,6 +498,8 @@
     <figure class="polaroid"><img src="img/p07.jpg" alt="Bulldog francês com bolinha" loading="lazy"><figcaption>joga a bolinha?</figcaption></figure>
     <figure class="polaroid"><img src="img/p04.jpg" alt="Dachshund caramelo de pelo longo" loading="lazy"><figcaption>olhar de pidão</figcaption></figure>
     <figure class="polaroid"><img src="img/p08.jpg" alt="Cão de pelo cinza e olhos azuis" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
+    <figure class="polaroid"><img src="img/malinois.jpg" alt="Filhote de pastor belga malinois de língua de fora na grama" loading="lazy"><figcaption>língua de fora</figcaption></figure>
+    <figure class="polaroid"><img src="img/ruiva.jpg" alt="Cachorra ruiva deitada na grama depois do passeio, com guia roxa" loading="lazy"><figcaption>depois do passeio</figcaption></figure>
     <!-- same set again so the loop is seamless -->
     <figure class="polaroid" aria-hidden="true"><img src="img/p05.jpg" alt="" loading="lazy"><figcaption>hora do petisco!</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/p06.jpg" alt="" loading="lazy"><figcaption>caminha aprovada</figcaption></figure>
@@ -480,6 +508,8 @@
     <figure class="polaroid" aria-hidden="true"><img src="img/p07.jpg" alt="" loading="lazy"><figcaption>joga a bolinha?</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/p04.jpg" alt="" loading="lazy"><figcaption>olhar de pidão</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/p08.jpg" alt="" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/malinois.jpg" alt="" loading="lazy"><figcaption>língua de fora</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/ruiva.jpg" alt="" loading="lazy"><figcaption>depois do passeio</figcaption></figure>
   </div>
 </section>
 
