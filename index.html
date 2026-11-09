@@ -151,6 +151,8 @@
   .ig-frame{max-width:440px;width:100%;margin-inline:auto;background:var(--white);padding:14px 14px 6px;border-radius:6px;transform:rotate(-1.5deg);box-shadow:0 18px 40px -12px #3a221640,0 2px 6px #3a22161a}
   .ig-frame .instagram-media{margin:0!important;min-width:0!important;width:100%!important;border:0!important;box-shadow:none!important}
   .ig-frame blockquote.instagram-media img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px}
+  .ig-clip{overflow:hidden;border-radius:4px}
+  .ig-clip iframe.instagram-media{margin-bottom:-118px!important}  /* ponytail: hides the embed footer (icons, likes, comment box); the footer height is fixed px in embed v14, re-measure if Instagram changes it */
   .ig-frame .hand{text-align:center;margin:8px 0 4px;font-size:1.45rem}
   .story .reveal > blockquote{margin-top:26px;padding:22px 26px;border-left:4px solid var(--orange);background:var(--white);border-radius:0 16px 16px 0;font-family:Fraunces,serif;font-style:italic;font-size:1.25rem;color:var(--ink)}
   .story .sign{margin-top:18px}
@@ -288,9 +290,9 @@
       </div>
       <div class="ig-frame">
         <!-- official Instagram embed of the catsitter reel (13/10) -->
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Decnm4ePiGZ/" data-instgrm-version="14">
+        <div class="ig-clip"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Decnm4ePiGZ/" data-instgrm-version="14">
           <a href="https://www.instagram.com/reel/Decnm4ePiGZ/" target="_blank" rel="noopener">Ver a visita de catsitter no Instagram</a>
-        </blockquote>
+        </blockquote></div>
       </div>
     </div>
   </div>
@@ -320,9 +322,9 @@
   <div class="wrap">
     <div class="ig-frame reveal">
       <!-- Instagram's official embed of the carousel "A história da DomPet!" (21/08). Before embed.js loads, the fallback is the first slide linking to the post. -->
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcUTBNcD8Xg/" data-instgrm-version="14">
+      <div class="ig-clip"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcUTBNcD8Xg/" data-instgrm-version="14">
         <a href="https://www.instagram.com/p/DcUTBNcD8Xg/" target="_blank" rel="noopener"><img src="img/p01.jpg" alt="Quem somos nós? A história por trás da Dompet" loading="lazy"></a>
-      </blockquote>
+      </blockquote></div>
       <p class="hand">Isabela, Tia Gi &amp; Amora 🧡</p>
     </div>
     <div class="reveal">
