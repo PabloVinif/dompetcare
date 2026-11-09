@@ -1,4 +1,4 @@
-# Dompet Care Maringá — Landing Page
+# Dompet Care Maringá - Landing Page
 
 Landing page da [@dompetcaremaringa](https://www.instagram.com/dompetcaremaringa/): hospedagem afetiva, dogwalker e petsitter em Maringá-PR.
 
