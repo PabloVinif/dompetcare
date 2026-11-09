@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dompet Care Maringá - Hospedagem afetiva, Dogwalker e Petsitter</title>
-<meta name="description" content="Hospedagem domiciliar afetiva, dogwalker e petsitter em Maringá-PR. Credenciada e especializada pela Cão Ativo. Seu cão cuidado como parte da família.">
+<title>Dompet Care Maringá - Hospedagem afetiva, Dogwalker, Petsitter e Catsitter</title>
+<meta name="description" content="Hospedagem domiciliar afetiva, dogwalker, petsitter e catsitter em Maringá-PR. Credenciada e especializada pela Cão Ativo. Seu cão cuidado como parte da família.">
 <meta property="og:title" content="Dompet Care Maringá">
 <meta property="og:description" content="Hospedagem afetiva & bem-estar animal em Maringá-PR.">
 <meta property="og:image" content="img/p08.jpg">
@@ -106,7 +106,13 @@
   /* SERVICES */
   .head{max-width:640px;margin-bottom:56px}
   .head h2{margin-top:12px}
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .services{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .cat-video{display:grid;grid-template-columns:1fr minmax(0,400px);gap:56px;align-items:center;margin-top:72px}
+  .cat-video h3{font-size:clamp(1.8rem,4vw,2.6rem);margin:10px 0 14px}
+  .cat-video h3 em{font-style:italic;color:var(--orange)}
+  .cat-video p{color:var(--ink-soft);font-size:1.08rem}
+  @media (max-width:1100px){.services{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:760px){.cat-video{grid-template-columns:1fr;gap:32px}}
   .card{
     background:var(--white);border-radius:var(--r);padding:34px 30px 30px;position:relative;
     border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);transition:transform .2s,box-shadow .2s;
@@ -120,7 +126,7 @@
   .card li{padding:6px 0 6px 28px;position:relative;border-top:1px dashed #3a221626}
   .card li::before{content:"♥";position:absolute;left:4px;color:var(--orange)}
   .card .tag{position:absolute;top:-14px;right:20px;background:var(--green);color:var(--white);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
-  @media (max-width:900px){.services{grid-template-columns:1fr}}
+  @media (max-width:640px){.services{grid-template-columns:1fr}}
 
   /* WHY HOME */
   .why{background:var(--ink);color:var(--paper);border-radius:40px;margin-inline:16px}
@@ -141,7 +147,11 @@
   .story .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
   .story .polaroid{position:relative;transform:rotate(-3deg);max-width:420px}
   .story p{color:var(--ink-soft);margin-top:18px;font-size:1.08rem}
-  .story blockquote{margin-top:26px;padding:22px 26px;border-left:4px solid var(--orange);background:var(--white);border-radius:0 16px 16px 0;font-family:Fraunces,serif;font-style:italic;font-size:1.25rem;color:var(--ink)}
+  .ig-frame{max-width:440px;width:100%;margin-inline:auto;background:var(--white);padding:14px 14px 6px;border-radius:6px;transform:rotate(-1.5deg);box-shadow:0 18px 40px -12px #3a221640,0 2px 6px #3a22161a}
+  .ig-frame .instagram-media{margin:0!important;min-width:0!important;width:100%!important;border:0!important;box-shadow:none!important}
+  .ig-frame blockquote.instagram-media img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px}
+  .ig-frame .hand{text-align:center;margin:8px 0 4px;font-size:1.45rem}
+  .story .reveal > blockquote{margin-top:26px;padding:22px 26px;border-left:4px solid var(--orange);background:var(--white);border-radius:0 16px 16px 0;font-family:Fraunces,serif;font-style:italic;font-size:1.25rem;color:var(--ink)}
   .story .sign{margin-top:18px}
   .cred{display:flex;align-items:center;gap:14px;margin-top:28px;padding:16px 20px;border:2px dashed var(--green);border-radius:16px;color:var(--ink)}
   .cred svg{width:34px;flex:none;color:var(--green)}
@@ -211,7 +221,7 @@
     <div>
       <span class="badge rise">📍 Maringá · PR &nbsp;·&nbsp; ✅ Credenciada Cão Ativo</span>
       <h1 class="rise d1">Seu cão em casa, <em>mesmo longe</em> de casa.</h1>
-      <p class="lead rise d2">Hospedagem afetiva, dogwalker e petsitter com atenção individual, rotina respeitada e muito carinho.</p>
+      <p class="lead rise d2">Hospedagem afetiva, dogwalker, petsitter e catsitter, com atenção individual, rotina respeitada e muito carinho.</p>
       <div class="ctas rise d3">
         <a class="btn" href="https://contate.me/dompetcare" target="_blank" rel="noopener">
           <svg width="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3l-.5-.3Z"/></svg>
@@ -229,8 +239,8 @@
     </div>
   </div>
   <div class="ticker" aria-hidden="true"><div>
-    <span>Cuidado</span><span>Amor</span><span>Bem-estar</span><span>Hospedagem afetiva</span><span>Dogwalker</span><span>Petsitter</span>
-    <span>Cuidado</span><span>Amor</span><span>Bem-estar</span><span>Hospedagem afetiva</span><span>Dogwalker</span><span>Petsitter</span>
+    <span>Cuidado</span><span>Amor</span><span>Bem-estar</span><span>Hospedagem afetiva</span><span>Dogwalker</span><span>Petsitter</span><span>Catsitter</span>
+    <span>Cuidado</span><span>Amor</span><span>Bem-estar</span><span>Hospedagem afetiva</span><span>Dogwalker</span><span>Petsitter</span><span>Catsitter</span>
   </div></div>
 </header>
 
@@ -239,7 +249,7 @@
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow">O que fazemos</span>
-      <h2>Três jeitos de cuidar do seu <em>melhor amigo</em></h2>
+      <h2>Quatro jeitos de cuidar do seu <em>melhor amigo</em></h2>
     </div>
     <div class="services">
       <article class="card reveal">
@@ -261,6 +271,25 @@
         <p>Vamos até a sua casa cuidar do seu pet no ambiente dele, enquanto você viaja ou trabalha.</p>
         <ul><li>Alimentação e água fresca</li><li>Medicação, se necessário</li><li>Companhia e brincadeiras</li></ul>
       </article>
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9V3l4 3.5h6L19 3v6"/><path d="M5 9c0 6 3 10 7 10s7-4 7-10"/><circle cx="9.5" cy="11.5" r=".6" fill="currentColor"/><circle cx="14.5" cy="11.5" r=".6" fill="currentColor"/><path d="M11 14.5h2l-1 1Z"/></svg></div>
+        <h3>Catsitter</h3>
+        <p>Vai viajar e tem um gatinho? A gente cuida dele na sua casa, sem tirar ele do território dele.</p>
+        <ul><li>Visitas na rotina dele</li><li>Comida, água e caixinha em dia</li><li>Cuidado no jeitinho de cada gato</li></ul>
+      </article>
+    </div>
+    <div class="cat-video reveal">
+      <div>
+        <span class="eyebrow">Tem gato em casa?</span>
+        <h3>Um pouco da nossa visita de <em>catsitter</em></h3>
+        <p>Cada visita é elaborada e baseada na rotina e na especialidade de cada pet. Se você viaja e tem um gatinho, nós da Dompet cuidamos na sua casa. 🧡</p>
+      </div>
+      <div class="ig-frame">
+        <!-- official Instagram embed of the catsitter reel (13/10) -->
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Decnm4ePiGZ/" data-instgrm-version="14">
+          <a href="https://www.instagram.com/reel/Decnm4ePiGZ/" target="_blank" rel="noopener">Ver a visita de catsitter no Instagram</a>
+        </blockquote>
+      </div>
     </div>
   </div>
 </section>
@@ -287,7 +316,13 @@
 
 <section class="story" id="historia">
   <div class="wrap">
-    <figure class="polaroid reveal"><img src="img/p01.jpg" alt="Quem somos nós? A história por trás da Dompet" loading="lazy"><figcaption>Isabela, Tia Gi &amp; Amora</figcaption></figure>
+    <div class="ig-frame reveal">
+      <!-- Instagram's official embed of the carousel "A história da DomPet!" (21/08). Before embed.js loads, the fallback is the first slide linking to the post. -->
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcUTBNcD8Xg/" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DcUTBNcD8Xg/" target="_blank" rel="noopener"><img src="img/p01.jpg" alt="Quem somos nós? A história por trás da Dompet" loading="lazy"></a>
+      </blockquote>
+      <p class="hand">Isabela, Tia Gi &amp; Amora 🧡</p>
+    </div>
     <div class="reveal">
       <span class="eyebrow">Nossa história</span>
       <h2 style="margin-top:12px">Nasceu do amor. Cresce com <em>conhecimento</em>.</h2>
@@ -346,7 +381,7 @@
       <div class="paws"></div>
       <span class="eyebrow" style="position:relative">Vagas limitadas</span>
       <h2 style="position:relative">Bora reservar a <em>próxima estadia</em>?</h2>
-      <p style="position:relative">Entre em contato e consulte nossas vagas para hospedagem, passeios e petsitter em Maringá.</p>
+      <p style="position:relative">Entre em contato e consulte nossas vagas para hospedagem, passeios, petsitter e catsitter em Maringá.</p>
       <div class="ctas center">
         <a class="btn" href="https://contate.me/dompetcare" target="_blank" rel="noopener">Consultar vagas</a>
         <a class="btn ghost" href="https://www.instagram.com/dompetcaremaringa/" target="_blank" rel="noopener">@dompetcaremaringa</a>
@@ -373,5 +408,6 @@
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), {threshold:.15});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
