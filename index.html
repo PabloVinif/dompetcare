@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dompet Care Maringá — Hospedagem afetiva, Dogwalker e Petsitter</title>
+<meta name="description" content="Hospedagem domiciliar afetiva, dogwalker e petsitter em Maringá-PR. Credenciada e especializada pela Cão Ativo. Seu cão cuidado como parte da família.">
+<meta property="og:title" content="Dompet Care Maringá">
+<meta property="og:description" content="Hospedagem afetiva & bem-estar animal em Maringá-PR.">
+<meta property="og:image" content="img/p08.jpg">
+<meta name="theme-color" content="#EE7A1F">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,100;1,9..144,400..700,100&family=Figtree:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFF5EA; --paper-2:#FBE8D3; --orange:#EE7A1F; --orange-deep:#C85F0E;
+    --ink:#3A2216; --ink-soft:#6E4F3E; --green:#4E8A4A; --white:#fff;
+    --r:22px;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Figtree,system-ui,sans-serif; color:var(--ink); background:var(--paper);
+    line-height:1.6; font-size:17px; overflow-x:hidden;
+  }
+  /* paper grain */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:Fraunces,serif;font-variation-settings:"SOFT" 100;line-height:1.05;letter-spacing:-.02em}
+  h2{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:700}
+  h2 em,h1 em{font-style:italic;color:var(--orange);font-weight:600}
+  .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+  .eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--orange-deep)}
+  .hand{font-family:Caveat,cursive;font-size:1.5rem;color:var(--ink-soft)}
+  section{padding:clamp(72px,10vw,128px) 0}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;padding:16px 28px;border-radius:999px;
+    background:var(--orange);color:var(--white);font-weight:700;text-decoration:none;
+    box-shadow:0 6px 0 var(--orange-deep);transition:transform .15s,box-shadow .15s;
+  }
+  .btn:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--orange-deep)}
+  .btn:active{transform:translateY(6px);box-shadow:0 0 0 var(--orange-deep)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+  .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid #3a22161a}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:Fraunces,serif;font-weight:700;font-size:1.25rem}
+  .brand img{width:46px;height:46px;border-radius:50%}
+  nav ul{display:flex;gap:28px;list-style:none;padding:0}
+  nav ul a{text-decoration:none;font-weight:500;color:var(--ink-soft)}
+  nav ul a:hover{color:var(--orange-deep)}
+  nav .btn{padding:10px 20px;box-shadow:0 4px 0 var(--orange-deep)}
+  .brand{white-space:nowrap}
+  @media (max-width:860px){nav ul{display:none}}
+  @media (max-width:480px){nav .btn{padding:8px 14px;font-size:.9rem}.brand{font-size:1.1rem}.brand img{width:38px;height:38px}}
+
+  /* HERO */
+  .hero{padding-top:56px;position:relative;overflow-x:clip}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:800;margin:18px 0 22px}
+  .hero p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:30ch}
+  .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1.5px dashed var(--orange);border-radius:999px;padding:6px 14px;font-size:.9rem;font-weight:500}
+  .stack{position:relative;height:560px}
+  .polaroid{
+    position:absolute;background:var(--white);padding:12px 12px 46px;border-radius:4px;
+    box-shadow:0 18px 40px -12px #3a221640,0 2px 6px #3a22161a;
+    transition:transform .4s cubic-bezier(.2,.9,.3,1.3);
+  }
+  .polaroid img{aspect-ratio:1;object-fit:cover;border-radius:2px}
+  .polaroid figcaption{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:Caveat,cursive;font-size:1.35rem;color:var(--ink-soft)}
+  .polaroid:hover{transform:rotate(0) scale(1.04)!important;z-index:5}
+  .stack .p1{width:58%;left:2%;top:4%;transform:rotate(-6deg)}
+  .stack .p2{width:52%;right:0;top:0;transform:rotate(5deg)}
+  .stack .p3{width:56%;left:24%;bottom:0;transform:rotate(-2deg);z-index:2}
+  .heart{position:absolute;color:var(--orange);width:44px;animation:beat 2.4s ease-in-out infinite}
+  @keyframes beat{0%,100%{transform:scale(1) rotate(-12deg)}12%{transform:scale(1.18) rotate(-12deg)}24%{transform:scale(1) rotate(-12deg)}}
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr}
+    .stack{height:420px}
+  }
+
+  /* entrance */
+  .rise{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}.d4{animation-delay:.5s}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rise,.reveal{opacity:1;transform:none;animation:none;transition:none}.heart{animation:none}}
+
+  /* marquee */
+  .ticker{background:var(--orange);color:var(--white);overflow:hidden;padding:16px 0;transform:rotate(-1.5deg);margin:40px -20px 0}
+  .ticker div{display:flex;gap:48px;width:max-content;animation:slide 30s linear infinite;font-family:Fraunces,serif;font-style:italic;font-size:1.6rem;font-weight:600}
+  .ticker span::after{content:"🐾";margin-left:48px;font-style:normal}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* SERVICES */
+  .head{max-width:640px;margin-bottom:56px}
+  .head h2{margin-top:12px}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:var(--white);border-radius:var(--r);padding:34px 30px 30px;position:relative;
+    border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);transition:transform .2s,box-shadow .2s;
+  }
+  .card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--orange)}
+  .card .ico{width:64px;height:64px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;margin-bottom:22px}
+  .card .ico svg{width:34px;color:var(--orange-deep)}
+  .card h3{font-size:1.8rem;margin-bottom:10px}
+  .card p{color:var(--ink-soft)}
+  .card ul{margin-top:16px;padding-left:0;list-style:none}
+  .card li{padding:6px 0 6px 28px;position:relative;border-top:1px dashed #3a221626}
+  .card li::before{content:"♥";position:absolute;left:4px;color:var(--orange)}
+  .card .tag{position:absolute;top:-14px;right:20px;background:var(--green);color:var(--white);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+  @media (max-width:900px){.services{grid-template-columns:1fr}}
+
+  /* WHY HOME */
+  .why{background:var(--ink);color:var(--paper);border-radius:40px;margin-inline:16px}
+  .why .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .why .eyebrow{color:#FFB070}
+  .why p{color:#F2DCCB}
+  .why h2 em{color:#FFA154}
+  .benefits{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+  .benefit{border:1.5px solid #ffffff2a;border-radius:18px;padding:20px}
+  .benefit b{display:block;font-family:Fraunces,serif;font-size:1.25rem;color:var(--white);margin-bottom:4px}
+  .benefit span{font-size:.95rem;color:#E6CDB9}
+  .why .photo{position:relative}
+  .why .photo img{border-radius:28px;aspect-ratio:4/5;object-fit:cover;width:100%}
+  .why .photo .sticker{position:absolute;left:-28px;bottom:36px;background:var(--orange);color:var(--white);border-radius:50%;width:150px;height:150px;display:grid;place-items:center;text-align:center;font-family:Fraunces,serif;font-weight:700;line-height:1.1;transform:rotate(-10deg);font-size:1.05rem;padding:16px}
+  @media (max-width:900px){.why .wrap{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}.why .photo .sticker{left:8px}}
+
+  /* STORY */
+  .story .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+  .story .polaroid{position:relative;transform:rotate(-3deg);max-width:420px}
+  .story p{color:var(--ink-soft);margin-top:18px;font-size:1.08rem}
+  .story blockquote{margin-top:26px;padding:22px 26px;border-left:4px solid var(--orange);background:var(--white);border-radius:0 16px 16px 0;font-family:Fraunces,serif;font-style:italic;font-size:1.25rem;color:var(--ink)}
+  .story .sign{margin-top:18px}
+  .cred{display:flex;align-items:center;gap:14px;margin-top:28px;padding:16px 20px;border:2px dashed var(--green);border-radius:16px;color:var(--ink)}
+  .cred svg{width:34px;flex:none;color:var(--green)}
+  @media (max-width:900px){.story .wrap{grid-template-columns:1fr;gap:48px}.story .polaroid{margin-inline:auto}}
+
+  /* GALLERY */
+  .gallery{background:var(--paper-2)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .grid .polaroid{position:relative}
+  .grid .polaroid:nth-child(odd){transform:rotate(-2.5deg)}
+  .grid .polaroid:nth-child(even){transform:rotate(2deg) translateY(18px)}
+  @media (max-width:760px){.grid{grid-template-columns:1fr 1fr;gap:16px}.grid .polaroid{padding:8px 8px 36px}.grid figcaption{font-size:1.1rem}}
+
+  /* CHECKLIST */
+  .check .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+  .bag{background:var(--white);border-radius:28px;padding:36px;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--orange)}
+  .bag label{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px dashed #3a22162e;cursor:pointer}
+  .bag label:last-child{border:0}
+  .bag input{appearance:none;flex:none;width:24px;height:24px;border:2px solid var(--ink);border-radius:7px;margin-top:2px;display:grid;place-items:center;cursor:pointer}
+  .bag input:checked{background:var(--orange);border-color:var(--orange)}
+  .bag input:checked::after{content:"✓";color:var(--white);font-weight:700;font-size:15px}
+  .bag input:checked + span{text-decoration:line-through;color:var(--ink-soft)}
+  .bag input:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+  .check p{color:var(--ink-soft);margin-top:18px}
+  @media (max-width:900px){.check .wrap{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta{text-align:center;position:relative}
+  .cta .box{background:var(--orange);color:var(--white);border-radius:40px;padding:clamp(48px,8vw,96px) 24px;position:relative;overflow:hidden}
+  .cta h2{color:var(--white);font-size:clamp(2.4rem,6vw,4.4rem);max-width:16ch;margin:12px auto 20px}
+  .cta h2 em{color:var(--ink)}
+  .cta p{max-width:46ch;margin:0 auto 34px;color:#FFF0E2;font-size:1.15rem}
+  .cta .btn{background:var(--white);color:var(--ink);box-shadow:0 6px 0 var(--ink)}
+  .cta .btn:hover{box-shadow:0 4px 0 var(--ink)}
+  .cta .btn.ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2px var(--white)}
+  .cta .eyebrow{color:var(--ink)}
+  .paws{position:absolute;inset:0;opacity:.13;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23fff' transform='rotate(-20 60 60)'%3E%3Cellipse cx='60' cy='72' rx='16' ry='13'/%3E%3Ccircle cx='42' cy='52' r='7'/%3E%3Ccircle cx='54' cy='42' r='7'/%3E%3Ccircle cx='68' cy='42' r='7'/%3E%3Ccircle cx='79' cy='53' r='7'/%3E%3C/g%3E%3C/svg%3E")}
+  .ctas.center{justify-content:center;display:flex;flex-wrap:wrap;gap:14px;position:relative}
+
+  footer{padding:48px 0 64px;color:var(--ink-soft);font-size:.95rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+  footer a{text-decoration:none;font-weight:700;color:var(--ink)}
+  footer a:hover{color:var(--orange-deep)}
+
+  .float{position:fixed;right:18px;bottom:18px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 24px -6px #0006;transition:transform .2s}
+  .float:hover{transform:scale(1.08)}
+  .float svg{width:32px;color:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#topo"><img src="img/logo.jpg" alt="Logo Dompet Care" width="46" height="46">Dompet Care</a>
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#hospedagem">Hospedagem</a></li>
+      <li><a href="#historia">Nossa história</a></li>
+      <li><a href="#hospedes">Hóspedes</a></li>
+    </ul>
+    <a class="btn" href="https://contate.me/dompetcare" target="_blank" rel="noopener">Consultar vagas</a>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <span class="badge rise">📍 Maringá · PR &nbsp;·&nbsp; ✅ Credenciada Cão Ativo</span>
+      <h1 class="rise d1">Seu cão em casa, <em>mesmo longe</em> de casa.</h1>
+      <p class="lead rise d2">Hospedagem afetiva, dogwalker e petsitter com atenção individual, rotina respeitada e muito carinho.</p>
+      <div class="ctas rise d3">
+        <a class="btn" href="https://contate.me/dompetcare" target="_blank" rel="noopener">
+          <svg width="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3l-.5-.3Z"/></svg>
+          Falar com a gente
+        </a>
+        <a class="btn ghost" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+    <div class="stack rise d4" aria-label="Fotos de hóspedes da Dompet Care">
+      <figure class="polaroid p1"><img src="img/p04.jpg" alt="Dachshund caramelo sentado na cama" loading="eager"><figcaption>hóspede vip ♥</figcaption></figure>
+      <figure class="polaroid p2"><img src="img/p08.jpg" alt="Cão de olhos azuis sorrindo" loading="eager"><figcaption>sorriso de férias</figcaption></figure>
+      <figure class="polaroid p3"><img src="img/p09.jpg" alt="Dupla de bull terriers de roupinha" loading="eager"><figcaption>a dupla que amamos</figcaption></figure>
+      <svg class="heart" style="left:-6px;bottom:90px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.7-9.3C.6 8 3 4 6.8 4c2.1 0 3.6 1.2 5.2 3 1.6-1.8 3.1-3 5.2-3C21 4 23.4 8 21.7 11.7 19.5 16.4 12 21 12 21Z"/></svg>
+      <svg class="heart" style="right:8px;bottom:200px;width:32px;animation-delay:.6s" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.7-9.3C.6 8 3 4 6.8 4c2.1 0 3.6 1.2 5.2 3 1.6-1.8 3.1-3 5.2-3C21 4 23.4 8 21.7 11.7 19.5 16.4 12 21 12 21Z"/></svg>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div>
+    <span>Cuidado</span><span>Amor</span><span>Bem-estar</span><span>Hospedagem afetiva</span><span>Dogwalker</span><span>Petsitter</span>
+    <span>Cuidado</span><span>Amor</span><span>Bem-estar</span><span>Hospedagem afetiva</span><span>Dogwalker</span><span>Petsitter</span>
+  </div></div>
+</header>
+
+<main>
+<section id="servicos">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">O que fazemos</span>
+      <h2>Três jeitos de cuidar do seu <em>melhor amigo</em></h2>
+    </div>
+    <div class="services">
+      <article class="card reveal">
+        <span class="tag">Mais procurado</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M12 17s-3-1.8-3-3.6A1.6 1.6 0 0 1 12 13a1.6 1.6 0 0 1 3 .4c0 1.8-3 3.6-3 3.6Z"/></svg></div>
+        <h3>Hospedagem</h3>
+        <p>Hospedagem domiciliar: seu cão fica num lar de verdade, sem mudança brusca de rotina.</p>
+        <ul><li>Atenção individualizada</li><li>Rotina pensada para cada hóspede</li><li>Passeios e acompanhamento</li></ul>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="5" r="2"/><path d="M7 7v6l-2 7M7 13l3 7M7 9l4 2 3-3"/><path d="M14 8c3 0 5 2 5 4v2h-6l-1 6M17 14l1 6"/><circle cx="20" cy="9" r="1"/></svg></div>
+        <h3>Dogwalker</h3>
+        <p>Muito além de “um passeio”: gasto de energia, estímulo e leitura do comportamento do seu cão.</p>
+        <ul><li>Passeios com segurança</li><li>Socialização e enriquecimento</li><li>Olhar treinado em linguagem canina</li></ul>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21v-8l8-6 8 6v8"/><path d="M9 21v-5h6v5"/><circle cx="12" cy="3" r="1"/></svg></div>
+        <h3>Petsitter</h3>
+        <p>Vamos até a sua casa cuidar do seu pet no ambiente dele, enquanto você viaja ou trabalha.</p>
+        <ul><li>Alimentação e água fresca</li><li>Medicação, se necessário</li><li>Companhia e brincadeiras</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="hospedagem">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Hospedagem domiciliar</span>
+      <h2 style="margin-top:12px">Hospedar não é só oferecer <em>um lugar pra dormir</em>.</h2>
+      <p style="margin-top:20px;font-size:1.1rem">É proporcionar bem-estar, segurança e tranquilidade enquanto a família está longe. Na Dompet, seu cão é cuidado como parte da nossa família.</p>
+      <div class="benefits">
+        <div class="benefit"><b>Clima de casa</b><span>Nada de baias: sofá, caminha e (às vezes) a nossa cama 🤭</span></div>
+        <div class="benefit"><b>Rotina respeitada</b><span>Horários de comida, passeio e sono como ele já está acostumado.</span></div>
+        <div class="benefit"><b>Atenção individual</b><span>Poucos hóspedes por vez, cada um com cuidado sob medida.</span></div>
+        <div class="benefit"><b>Você tranquilo</b><span>Notícias, fotos e vídeos durante toda a estadia.</span></div>
+      </div>
+    </div>
+    <div class="photo reveal">
+      <img src="img/p07.jpg" alt="Bulldog francês com bolinha de tênis na boca e pug ao fundo" loading="lazy">
+      <div class="sticker">Hospedagem afetiva ♥</div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="historia">
+  <div class="wrap">
+    <figure class="polaroid reveal"><img src="img/p01.jpg" alt="Quem somos nós? A história por trás da Dompet" loading="lazy"><figcaption>Isabela, Tia Gi &amp; Amora</figcaption></figure>
+    <div class="reveal">
+      <span class="eyebrow">Nossa história</span>
+      <h2 style="margin-top:12px">Nasceu do amor. Cresce com <em>conhecimento</em>.</h2>
+      <p>Por trás da Dompet existe um sonho, uma família e uma cachorra chamada <strong>Amora</strong> — uma Australian Cattle Dog que inspirou até o laranja da nossa marca.</p>
+      <p><strong>Isabela</strong>, estudante de Medicina Veterinária, é apaixonada por comportamento animal, adestramento e linguagem corporal canina. A ideia ganhou força quando sua mãe, a famosa <strong>Tia Gi</strong>, acreditou no sonho e decidiu construir tudo junto.</p>
+      <div class="cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m9 14-2 8 5-3 5 3-2-8"/><path d="m9.5 9 1.7 1.7L14.5 7.5"/></svg>
+        <span>Credenciada e especializada pela <strong>Cão Ativo</strong> (São Paulo) em creche, pet sitter e dog walker.</span>
+      </div>
+      <p class="hand sign">— com carinho, Isabela &amp; Tia Gi 🧡</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="hospedes">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Mural de hóspedes</span>
+      <h2>Quem já se sentiu <em>em casa</em> por aqui</h2>
+    </div>
+    <div class="grid">
+      <figure class="polaroid reveal"><img src="img/p05.jpg" alt="Quatro cães pequenos olhando para a câmera" loading="lazy"><figcaption>hora do petisco!</figcaption></figure>
+      <figure class="polaroid reveal"><img src="img/p06.jpg" alt="Chihuahua de pelo longo sorrindo na caminha" loading="lazy"><figcaption>caminha aprovada</figcaption></figure>
+      <figure class="polaroid reveal"><img src="img/p09.jpg" alt="Dois bull terriers de roupinha xadrez" loading="lazy"><figcaption>Rock &amp; Bob</figcaption></figure>
+      <figure class="polaroid reveal"><img src="img/p07.jpg" alt="Bulldog francês com bolinha" loading="lazy"><figcaption>joga a bolinha?</figcaption></figure>
+      <figure class="polaroid reveal"><img src="img/p04.jpg" alt="Dachshund caramelo de pelo longo" loading="lazy"><figcaption>olhar de pidão</figcaption></figure>
+      <figure class="polaroid reveal"><img src="img/p08.jpg" alt="Cão de pelo cinza e olhos azuis" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="check">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Vai hospedar?</span>
+      <h2 style="margin-top:12px">A <em>malinha</em> do hóspede</h2>
+      <p>Para uma estadia tranquila e cheia de carinho, separe esses itens. E conte pra gente sobre a rotina, preferências, alergias e cuidados especiais — quanto mais conhecermos, melhor a experiência.</p>
+      <p class="hand" style="margin-top:22px">↳ dá pra ir marcando aqui mesmo!</p>
+    </div>
+    <div class="bag reveal" role="group" aria-label="Checklist da hospedagem">
+      <label><input type="checkbox"><span>🐾 Ração ou alimentação natural para toda a estadia</span></label>
+      <label><input type="checkbox"><span>🥣 Potes de comedouro e bebedouro</span></label>
+      <label><input type="checkbox"><span>🧻 Tapetes higiênicos, se utilizar</span></label>
+      <label><input type="checkbox"><span>🦮 Coleira e guia para os passeios</span></label>
+      <label><input type="checkbox"><span>🦴 Petiscos favoritos</span></label>
+      <label><input type="checkbox"><span>🛏️ Caminha ou mantinha com cheirinho de casa</span></label>
+      <label><input type="checkbox"><span>💊 Medicamentos e orientações, se em tratamento</span></label>
+      <label><input type="checkbox"><span>🧸 Brinquedinhos da rotina dele</span></label>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="box reveal">
+      <div class="paws"></div>
+      <span class="eyebrow" style="position:relative">Vagas limitadas</span>
+      <h2 style="position:relative">Bora reservar a <em>próxima estadia</em>?</h2>
+      <p style="position:relative">Entre em contato e consulte nossas vagas para hospedagem, passeios e petsitter em Maringá.</p>
+      <div class="ctas center">
+        <a class="btn" href="https://contate.me/dompetcare" target="_blank" rel="noopener">Consultar vagas</a>
+        <a class="btn ghost" href="https://www.instagram.com/dompetcaremaringa/" target="_blank" rel="noopener">@dompetcaremaringa</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#topo"><img src="img/logo.jpg" alt="" width="46" height="46">Dompet Care</a>
+    <span>Cuidado · Amor · Bem-estar — Maringá, PR</span>
+    <span><a href="https://www.instagram.com/dompetcaremaringa/" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://contate.me/dompetcare" target="_blank" rel="noopener">Contato</a></span>
+  </div>
+</footer>
+
+<a class="float" href="https://contate.me/dompetcare" target="_blank" rel="noopener" aria-label="Falar com a Dompet Care">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3l-.5-.3Z"/></svg>
+</a>
+
+<script>
+  // ponytail: one observer for scroll reveals, nothing else needs JS
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
