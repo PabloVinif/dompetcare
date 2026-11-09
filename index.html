@@ -111,9 +111,11 @@
   .cat-video h3{font-size:clamp(1.8rem,4vw,2.6rem);margin:10px 0 14px}
   .cat-video h3 em{font-style:italic;color:var(--orange)}
   .cat-video p{color:var(--ink-soft);font-size:1.08rem}
-  .cat-pol{position:relative;max-width:340px;margin:36px 0 0 12px;transform:rotate(2.5deg)}
+  .cat-pols{display:flex;align-items:flex-start;margin:36px 0 0 8px}
+  .cat-pol{position:relative;flex:1 1 0;max-width:300px;transform:rotate(-3deg)}
+  .cat-pol + .cat-pol{margin:34px 0 0 -26px;transform:rotate(3.5deg)}
   @media (max-width:1100px){.services{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:760px){.cat-video{grid-template-columns:1fr;gap:32px}.cat-pol{margin:32px auto 0;max-width:300px}}
+  @media (max-width:760px){.cat-video{grid-template-columns:1fr;gap:32px}.cat-pols{margin:28px auto 0;max-width:360px}.cat-pol{padding:9px 9px 36px}.cat-pol figcaption{font-size:.95rem}.cat-pol + .cat-pol{margin-left:-6px}}
   .card{
     background:var(--white);border-radius:var(--r);padding:34px 30px 30px;position:relative;
     border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);transition:transform .2s,box-shadow .2s;
@@ -379,7 +381,10 @@
         <span class="eyebrow">Tem gato em casa?</span>
         <h3>Um pouco da nossa visita de <em>catsitter</em></h3>
         <p>Cada visita é elaborada e baseada na rotina e na especialidade de cada pet. Se você viaja e tem um gatinho, nós da Dompet cuidamos na sua casa. 🧡</p>
-        <figure class="polaroid cat-pol"><img src="img/gatas.jpg" alt="Cacau e Mel, gatinhas gêmeas atendidas no catsitter, sentadas num tapete felpudo" loading="lazy"><figcaption>as gêmeas mais simpáticas</figcaption></figure>
+        <div class="cat-pols">
+          <figure class="polaroid cat-pol"><img src="img/gatas.jpg" alt="Cacau e Mel, gatinhas gêmeas atendidas no catsitter, sentadas num tapete felpudo" loading="lazy"><figcaption>as gêmeas mais simpáticas</figcaption></figure>
+          <figure class="polaroid cat-pol"><img src="img/gatinha.jpg" alt="Gatinha escaminha deitada ao lado de uma varinha de brinquedo" loading="lazy"><figcaption>pronta pra brincar</figcaption></figure>
+        </div>
       </div>
       <div class="ig-frame">
         <!-- official Instagram embed of the catsitter reel (13/10) -->
