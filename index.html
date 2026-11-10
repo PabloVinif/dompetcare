@@ -183,29 +183,7 @@
   .trust li{display:flex;align-items:center;gap:9px;background:var(--white);border:1.5px solid #3a22161f;border-radius:999px;padding:8px 16px 8px 10px;font-weight:600;font-size:.9rem}
   .trust li svg{width:26px;height:26px;flex:none;padding:4px;border-radius:50%;background:var(--paper-2);color:var(--orange-deep)}
 
-  /* PHONE VIDEO */
-  .phone{position:relative;width:min(300px,76vw);aspect-ratio:9/16;border-radius:40px;padding:10px;background:#1f1510;margin-inline:auto;
-    box-shadow:0 40px 70px -24px #3a221680,0 0 0 2px #ffffff14 inset}
-  .phone video{display:block;width:100%;height:100%;object-fit:cover;border-radius:31px;background:#000}
-  .phone .sound{position:absolute;right:22px;bottom:22px;display:flex;align-items:center;gap:8px;border:0;cursor:pointer;
-    background:#fffffff0;color:var(--ink);font:700 .85rem Figtree,sans-serif;padding:9px 14px;border-radius:999px;box-shadow:0 6px 16px #0004}
-  .phone .sound:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
 
-  /* SEASON (fim de ano) - ponytail: seasonal block, delete after the holidays */
-  .season{position:relative;padding:72px 0 0}
-  .season .box{position:relative;background:linear-gradient(160deg,#3A2216 0%,#5a3220 100%);color:var(--paper);border-radius:40px;padding:clamp(40px,6vw,72px);
-    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;overflow:hidden}
-  .season h2{color:var(--white)}
-  .season h2 em{color:#FFA154}
-  .season p{color:#F2DCCB;margin-top:18px;font-size:1.1rem;max-width:44ch}
-  .season .eyebrow{color:#FFB070}
-  .season .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-  .season .btn.ghost{color:var(--paper);box-shadow:inset 0 0 0 2px #fff6}
-  .lights{position:absolute;left:0;right:0;top:0;height:90px;pointer-events:none}
-  .lights circle{animation:twinkle 2.6s ease-in-out infinite}
-  .lights circle:nth-child(3n){animation-delay:.9s}.lights circle:nth-child(3n+1){animation-delay:1.7s}
-  @keyframes twinkle{50%{opacity:.35}}
-  @media (max-width:860px){.season .box{grid-template-columns:1fr}.season .phone{order:2}}
 
   /* HOW IT WORKS */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;counter-reset:s}
@@ -228,6 +206,7 @@
   .wall-scroll:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
   .marquee{display:flex;width:max-content;gap:34px;padding:30px 34px 50px}
   .marquee .polaroid{position:relative;width:260px;flex:none;user-select:none}
+  .marquee figcaption{font-size:1.7rem;font-weight:700;color:var(--ink)}
   .marquee img{-webkit-user-drag:none;pointer-events:none}
   .marquee .polaroid:nth-child(odd){transform:rotate(-3deg)}
   .marquee .polaroid:nth-child(even){transform:rotate(2.5deg) translateY(22px)}
@@ -344,30 +323,6 @@
   </div>
 </div>
 
-<section class="season" id="fim-de-ano">
-  <div class="wrap">
-    <div class="box reveal">
-      <svg class="lights" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 18 Q 150 70 300 22 T 600 22 T 900 22 T 1200 18" fill="none" stroke="#2a1810" stroke-width="2"/>
-        <g fill="#FFC861"><circle cx="70" cy="40" r="7"/><circle cx="190" cy="47" r="7" fill="#FF9442"/><circle cx="330" cy="26" r="7"/><circle cx="450" cy="44" r="7" fill="#FFE2A8"/><circle cx="560" cy="34" r="7" fill="#FF9442"/><circle cx="690" cy="40" r="7"/><circle cx="800" cy="44" r="7" fill="#FFE2A8"/><circle cx="930" cy="28" r="7" fill="#FF9442"/><circle cx="1050" cy="44" r="7"/><circle cx="1150" cy="30" r="7" fill="#FFE2A8"/></g>
-      </svg>
-      <div>
-        <span class="eyebrow">Fim de ano</span>
-        <h2 style="margin-top:12px">As vagas de fim de ano <em>tão voando</em>.</h2>
-        <p>Vai viajar nas festas? Ração, coleira, mantinha com cheirinho de casa... tá tudo pronto. Só falta garantir o lugar dele aqui na Dompet.</p>
-        <div class="ctas">
-          <a class="btn" href="https://contate.me/dompetcare" target="_blank" rel="noopener">Garantir a vaga</a>
-          <a class="btn ghost" href="#malinha">Ver a malinha</a>
-        </div>
-      </div>
-      <div class="phone">
-        <video src="media/fim-de-ano.mp4" poster="media/fim-de-ano.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo: a malinha dele, vagas de fim de ano"></video>
-        <button class="sound" type="button" aria-pressed="false">🔇 Ativar som</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="servicos">
   <div class="wrap">
     <div class="head reveal">
@@ -447,12 +402,10 @@
         <div class="benefit"><b>Atenção individual</b><span>Cada hóspede recebe carinho, acompanhamento e uma rotina pensada pra ele.</span></div>
         <div class="benefit"><b>Olhar de quem estuda</b><span>Comportamento animal e linguagem corporal canina no dia a dia.</span></div>
       </div>
+      <a class="btn" style="margin-top:32px" href="https://contate.me/dompetcare" target="_blank" rel="noopener">Consultar pacotes</a>
     </div>
     <div class="photo reveal">
-      <div class="phone">
-        <video src="media/um-lar.mp4" poster="media/um-lar.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo: um lugar pra dormir ou um lar"></video>
-        <button class="sound" type="button" aria-pressed="false">🔇 Ativar som</button>
-      </div>
+      <img src="img/p07.jpg" alt="Bulldog francês com bolinha de tênis na boca e pug ao fundo" loading="lazy">
       <div class="sticker">Hospedagem afetiva ♥</div>
     </div>
   </div>
@@ -509,37 +462,29 @@
   <button class="wall-btn next" type="button" aria-label="Próximas fotos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
   <div class="wall-scroll" tabindex="0" aria-label="Mural de hóspedes: arraste ou use as setas para ver mais fotos">
   <div class="marquee">
-    <figure class="polaroid"><img src="img/p05.jpg" alt="Quatro cães pequenos olhando para a câmera" loading="lazy"><figcaption>hora do petisco!</figcaption></figure>
-    <figure class="polaroid"><img src="img/p06.jpg" alt="Chihuahua de pelo longo sorrindo na caminha" loading="lazy"><figcaption>caminha aprovada</figcaption></figure>
-    <figure class="polaroid"><img src="img/p09.jpg" alt="Ayla e Diana, duas bull terriers de roupinha xadrez" loading="lazy"><figcaption>combinando o look</figcaption></figure>
-    <figure class="polaroid"><img src="img/gatas.jpg" alt="Cacau e Mel, gatinhas gêmeas" loading="lazy"><figcaption>as gêmeas</figcaption></figure>
-    <figure class="polaroid"><img src="img/p07.jpg" alt="Bulldog francês com bolinha" loading="lazy"><figcaption>joga a bolinha?</figcaption></figure>
-    <figure class="polaroid"><img src="img/p04.jpg" alt="Dachshund fêmea caramelo de pelo longo" loading="lazy"><figcaption>olhar de pidona</figcaption></figure>
-    <figure class="polaroid"><img src="img/p08.jpg" alt="Cão de pelo cinza e olhos azuis" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
-    <figure class="polaroid"><img src="img/malinois.jpg" alt="Filhote de pastor belga malinois de língua de fora na grama" loading="lazy"><figcaption>língua de fora</figcaption></figure>
-    <figure class="polaroid"><img src="img/m2.jpg" alt="Três cães pequenos olhando para cima no piso da sala" loading="lazy"><figcaption>a turminha</figcaption></figure>
-    <figure class="polaroid"><img src="img/m3.jpg" alt="Chihuahua de pelo longo com as patas no sofá" loading="lazy"><figcaption>dono do sofá</figcaption></figure>
-    <figure class="polaroid"><img src="img/m1.jpg" alt="Gatinha escaminha sentada na cama" loading="lazy"><figcaption>olhar de rainha</figcaption></figure>
-    <figure class="polaroid"><img src="img/m5.jpg" alt="Bulldog francês sorrindo, olhando para a câmera" loading="lazy"><figcaption>sorriso de frenchie</figcaption></figure>
-    <figure class="polaroid"><img src="img/m4.jpg" alt="Chihuahua deitado na cama entre as cobertas" loading="lazy"><figcaption>hora da soneca</figcaption></figure>
-    <figure class="polaroid"><img src="img/m6.jpg" alt="Pug deitado numa manta rosa" loading="lazy"><figcaption>manta favorita</figcaption></figure>
-    <figure class="polaroid"><img src="img/m7.jpg" alt="Cão de pelo cinza e olhos azuis em pé na cama" loading="lazy"><figcaption>cheguei!</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-bento-cecy.jpg" alt="Bento e Cecy, dois chihuahuas de pelo longo na cama" loading="lazy"><figcaption>Bento &amp; Cecy</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-pancho.jpg" alt="Pancho, husky de olhos claros sorrindo" loading="lazy"><figcaption>Pancho</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-pantufa.jpg" alt="Pantufa, lulu da pomerânia na cama" loading="lazy"><figcaption>Pantufa</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-caramel.jpg" alt="Caramel, cachorro caramelo no jardim" loading="lazy"><figcaption>Caramel</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-orion.jpg" alt="Orion, shih-tzu preto e branco na cama" loading="lazy"><figcaption>Orion</figcaption></figure>
+    <figure class="polaroid"><img src="img/p09.jpg" alt="Ayla e Diana, bull terriers de roupinha xadrez" loading="lazy"><figcaption>Ayla &amp; Diana</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-zaha.jpg" alt="Zaha, border collie no parque" loading="lazy"><figcaption>Zaha</figcaption></figure>
+    <figure class="polaroid"><img src="img/gatas.jpg" alt="Cacau e Mel, gatinhas gêmeas" loading="lazy"><figcaption>Cacau &amp; Mel</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-amora2.jpg" alt="Amora, yorkshire sorrindo no sofá" loading="lazy"><figcaption>Amora</figcaption></figure>
+    <figure class="polaroid"><img src="img/m1.jpg" alt="Olívia, gatinha escaminha" loading="lazy"><figcaption>Olívia</figcaption></figure>
+    <figure class="polaroid"><img src="img/h-sky.jpg" alt="Sky, samoieda branco sorrindo" loading="lazy"><figcaption>Sky</figcaption></figure>
     <!-- same set again so the loop is seamless -->
-    <figure class="polaroid" aria-hidden="true"><img src="img/p05.jpg" alt="" loading="lazy"><figcaption>hora do petisco!</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/p06.jpg" alt="" loading="lazy"><figcaption>caminha aprovada</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/p09.jpg" alt="" loading="lazy"><figcaption>combinando o look</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/gatas.jpg" alt="" loading="lazy"><figcaption>as gêmeas</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/p07.jpg" alt="" loading="lazy"><figcaption>joga a bolinha?</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/p04.jpg" alt="" loading="lazy"><figcaption>olhar de pidona</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/p08.jpg" alt="" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/malinois.jpg" alt="" loading="lazy"><figcaption>língua de fora</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/m2.jpg" alt="" loading="lazy"><figcaption>a turminha</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/m3.jpg" alt="" loading="lazy"><figcaption>dono do sofá</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/m1.jpg" alt="" loading="lazy"><figcaption>olhar de rainha</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/m5.jpg" alt="" loading="lazy"><figcaption>sorriso de frenchie</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/m4.jpg" alt="" loading="lazy"><figcaption>hora da soneca</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/m6.jpg" alt="" loading="lazy"><figcaption>manta favorita</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/m7.jpg" alt="" loading="lazy"><figcaption>cheguei!</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-bento-cecy.jpg" alt="" loading="lazy"><figcaption>Bento &amp; Cecy</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-pancho.jpg" alt="" loading="lazy"><figcaption>Pancho</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-pantufa.jpg" alt="" loading="lazy"><figcaption>Pantufa</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-caramel.jpg" alt="" loading="lazy"><figcaption>Caramel</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-orion.jpg" alt="" loading="lazy"><figcaption>Orion</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/p09.jpg" alt="" loading="lazy"><figcaption>Ayla &amp; Diana</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-zaha.jpg" alt="" loading="lazy"><figcaption>Zaha</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/gatas.jpg" alt="" loading="lazy"><figcaption>Cacau &amp; Mel</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-amora2.jpg" alt="" loading="lazy"><figcaption>Amora</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m1.jpg" alt="" loading="lazy"><figcaption>Olívia</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/h-sky.jpg" alt="" loading="lazy"><figcaption>Sky</figcaption></figure>
   </div>
   </div>
   </div>
@@ -614,17 +559,6 @@
   const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), {threshold:.15});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // phone videos: play muted only while on screen; the button turns the narration on
-  const vio = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause()), {threshold:.4});
-  document.querySelectorAll('.phone').forEach(p => {
-    const v = p.querySelector('video'), b = p.querySelector('.sound');
-    vio.observe(v);
-    b.addEventListener('click', () => {
-      const on = v.muted;
-      document.querySelectorAll('.phone video').forEach(o => { o.muted = true; o.nextElementSibling.textContent = '🔇 Ativar som'; o.nextElementSibling.setAttribute('aria-pressed', 'false'); });
-      if (on) { v.muted = false; v.currentTime = 0; v.play(); b.textContent = '🔊 Som ligado'; b.setAttribute('aria-pressed', 'true'); }
-    });
-  });
   // guest wall: drifts on its own; arrows, drag and swipe take over and it resumes after a pause.
   // The track holds the set twice, so wrapping by half its width is seamless in both directions.
   (() => {
