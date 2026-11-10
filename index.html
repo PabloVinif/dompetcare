@@ -221,14 +221,24 @@
 
   /* GALLERY: a moving wall of polaroids */
   .gallery{background:var(--paper-2);overflow:hidden}
-  .marquee{display:flex;width:max-content;gap:34px;padding:30px 0 50px;animation:wall 115s linear infinite}
-  .marquee:hover{animation-play-state:paused}
-  .marquee .polaroid{position:relative;width:260px;flex:none}
+  .wall{position:relative}
+  .wall-scroll{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;cursor:grab;touch-action:pan-x pan-y}
+  .wall-scroll::-webkit-scrollbar{display:none}
+  .wall-scroll.dragging{cursor:grabbing}
+  .wall-scroll:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+  .marquee{display:flex;width:max-content;gap:34px;padding:30px 34px 50px}
+  .marquee .polaroid{position:relative;width:260px;flex:none;user-select:none}
+  .marquee img{-webkit-user-drag:none;pointer-events:none}
   .marquee .polaroid:nth-child(odd){transform:rotate(-3deg)}
   .marquee .polaroid:nth-child(even){transform:rotate(2.5deg) translateY(22px)}
-  @keyframes wall{to{transform:translateX(-50%)}}
-  @media (max-width:760px){.marquee .polaroid{width:200px;padding:9px 9px 38px}.marquee{gap:22px;animation-duration:90s}}
-  @media (prefers-reduced-motion:reduce){.marquee{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.marquee [aria-hidden]{display:none}}
+  .wall-btn{position:absolute;top:50%;z-index:3;width:56px;height:56px;margin-top:-28px;border-radius:50%;border:2px solid var(--ink);background:var(--white);color:var(--ink);
+    display:grid;place-items:center;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s,background .15s}
+  .wall-btn:hover{background:var(--orange);color:var(--white)}
+  .wall-btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+  .wall-btn:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+  .wall-btn svg{width:24px;height:24px}
+  .wall-btn.prev{left:20px}.wall-btn.next{right:20px}
+  @media (max-width:760px){.marquee .polaroid{width:200px;padding:9px 9px 38px}.marquee{gap:22px;padding:24px 22px 44px}.wall-btn{width:46px;height:46px;margin-top:-23px}.wall-btn.prev{left:10px}.wall-btn.next{right:10px}}
 
   /* FAQ */
   .faq .wrap{max-width:860px}
@@ -494,6 +504,10 @@
       <h2>Quem já se sentiu <em>em casa</em> por aqui</h2>
     </div>
   </div>
+  <div class="wall">
+  <button class="wall-btn prev" type="button" aria-label="Fotos anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button>
+  <button class="wall-btn next" type="button" aria-label="Próximas fotos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+  <div class="wall-scroll" tabindex="0" aria-label="Mural de hóspedes: arraste ou use as setas para ver mais fotos">
   <div class="marquee">
     <figure class="polaroid"><img src="img/p05.jpg" alt="Quatro cães pequenos olhando para a câmera" loading="lazy"><figcaption>hora do petisco!</figcaption></figure>
     <figure class="polaroid"><img src="img/p06.jpg" alt="Chihuahua de pelo longo sorrindo na caminha" loading="lazy"><figcaption>caminha aprovada</figcaption></figure>
@@ -526,6 +540,8 @@
     <figure class="polaroid" aria-hidden="true"><img src="img/m4.jpg" alt="" loading="lazy"><figcaption>hora da soneca</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/m6.jpg" alt="" loading="lazy"><figcaption>manta favorita</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/m7.jpg" alt="" loading="lazy"><figcaption>cheguei!</figcaption></figure>
+  </div>
+  </div>
   </div>
 </section>
 
@@ -609,6 +625,35 @@
       if (on) { v.muted = false; v.currentTime = 0; v.play(); b.textContent = '🔊 Som ligado'; b.setAttribute('aria-pressed', 'true'); }
     });
   });
+  // guest wall: drifts on its own; arrows, drag and swipe take over and it resumes after a pause.
+  // The track holds the set twice, so wrapping by half its width is seamless in both directions.
+  (() => {
+    const sc = document.querySelector('.wall-scroll'), tr = sc.querySelector('.marquee');
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let pos = 0, hover = false, hold = false, t, drag = null;
+    const half = () => tr.scrollWidth / 2;
+    const wrap = () => { const h = half(); if (sc.scrollLeft >= h) sc.scrollLeft -= h; else if (sc.scrollLeft <= 0) sc.scrollLeft += h; };
+    const pause = (ms = 3500) => { hold = true; clearTimeout(t); t = setTimeout(() => { hold = false; pos = sc.scrollLeft; }, ms); };
+    sc.addEventListener('mouseenter', () => hover = true);
+    sc.addEventListener('mouseleave', () => { hover = false; pos = sc.scrollLeft; });
+    ['touchstart', 'wheel', 'keydown'].forEach(e => sc.addEventListener(e, () => pause(), { passive: true }));
+    sc.addEventListener('pointerdown', e => { pause(); if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, s: sc.scrollLeft }; sc.classList.add('dragging'); });
+    addEventListener('pointermove', e => { if (drag) sc.scrollLeft = drag.s - (e.clientX - drag.x); });
+    addEventListener('pointerup', () => { if (drag) { drag = null; sc.classList.remove('dragging'); pause(); } });
+    document.querySelectorAll('.wall-btn').forEach(b => b.addEventListener('click', () => {
+      pause(5000);
+      const step = tr.querySelector('.polaroid').offsetWidth + parseFloat(getComputedStyle(tr).columnGap);
+      sc.scrollBy({ left: (b.classList.contains('next') ? 1 : -1) * step * (innerWidth < 760 ? 1 : 2), behavior: 'smooth' });
+    }));
+    sc.scrollLeft = pos = 1;
+    let last = performance.now();
+    (function tick(now) {
+      const dt = Math.min(64, now - last); last = now;   // px per ms, so the speed is the same on 60 Hz and 144 Hz screens
+      if (!hover && !hold && !drag && !still) { pos += dt * .035; if (pos >= half()) pos -= half(); sc.scrollLeft = pos; }
+      else wrap();
+      requestAnimationFrame(tick);
+    })(last);
+  })();
 </script>
 <script async src="https://www.instagram.com/embed.js"></script>
 </body>
