@@ -167,12 +167,12 @@
   .walk h3{font-size:clamp(1.8rem,4vw,2.6rem);margin:10px 0 14px}
   .walk h3 em{font-style:italic;color:var(--orange)}
   .walk p{color:var(--ink-soft);font-size:1.08rem}
-  .walk-pols{position:relative;height:540px}
-  .walk-pols .polaroid{position:absolute;width:54%}
+  .walk-pols{position:relative;width:100%;max-width:560px;aspect-ratio:56/70}
+  .walk-pols .polaroid{position:absolute;width:47%}
   .walk-pols .wp1{left:0;top:0;transform:rotate(-4deg)}
-  .walk-pols .wp2{right:0;top:36px;transform:rotate(3.5deg)}
-  .walk-pols .wp3{left:23%;bottom:0;transform:rotate(-1deg);z-index:2}
-  @media (max-width:860px){.walk{grid-template-columns:1fr;gap:28px;margin-top:80px}.walk-pols{height:auto;aspect-ratio:1/1.05;max-width:420px;width:100%;margin-inline:auto}.walk-pols .polaroid{padding:9px 9px 36px}.walk-pols figcaption{font-size:1rem}}
+  .walk-pols .wp2{right:0;top:10%;transform:rotate(3.5deg)}
+  .walk-pols .wp3{left:27%;top:55%;transform:rotate(-1.5deg);z-index:2}
+  @media (max-width:860px){.walk{grid-template-columns:1fr;gap:28px;margin-top:80px}.walk-pols{max-width:420px;margin-inline:auto}.walk-pols .polaroid{padding:9px 9px 36px}.walk-pols figcaption{font-size:1rem}}
 
   /* TRUST STRIP */
   .trust{padding:46px 0 0}
