@@ -640,16 +640,27 @@
     sc.addEventListener('pointerdown', e => { pause(); if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, s: sc.scrollLeft }; sc.classList.add('dragging'); });
     addEventListener('pointermove', e => { if (drag) sc.scrollLeft = drag.s - (e.clientX - drag.x); });
     addEventListener('pointerup', () => { if (drag) { drag = null; sc.classList.remove('dragging'); pause(); } });
+    // arrows animate the scroll themselves: native smooth scroll fought the drift loop and landed seconds late
+    let anim = null;
     document.querySelectorAll('.wall-btn').forEach(b => b.addEventListener('click', () => {
       pause(5000);
       const step = tr.querySelector('.polaroid').offsetWidth + parseFloat(getComputedStyle(tr).columnGap);
-      sc.scrollBy({ left: (b.classList.contains('next') ? 1 : -1) * step * (innerWidth < 760 ? 1 : 2), behavior: 'smooth' });
+      const delta = (b.classList.contains('next') ? 1 : -1) * step * (innerWidth < 760 ? 1 : 2);
+      let from = anim ? anim.to : sc.scrollLeft;                 // a second click continues from where the first was heading
+      const h = half(), max = sc.scrollWidth - sc.clientWidth;
+      if (from + delta < 0) from += h; else if (from + delta > max) from -= h;   // jump to the twin copy first, so it never hits an edge
+      sc.scrollLeft = from;
+      anim = { from, to: from + delta, t0: performance.now() };
     }));
     sc.scrollLeft = pos = 1;
     let last = performance.now();
     (function tick(now) {
       const dt = Math.min(64, now - last); last = now;   // px per ms, so the speed is the same on 60 Hz and 144 Hz screens
-      if (!hover && !hold && !drag && !still) { pos += dt * .035; if (pos >= half()) pos -= half(); sc.scrollLeft = pos; }
+      if (anim) {
+        const k = Math.min(1, (now - anim.t0) / 450), e = 1 - Math.pow(1 - k, 3);
+        sc.scrollLeft = anim.from + (anim.to - anim.from) * e;
+        if (k === 1) { anim = null; wrap(); pos = sc.scrollLeft; }
+      } else if (!hover && !hold && !drag && !still) { pos += dt * .035; if (pos >= half()) pos -= half(); sc.scrollLeft = pos; }
       else wrap();
       requestAnimationFrame(tick);
     })(last);
