@@ -221,13 +221,13 @@
 
   /* GALLERY: a moving wall of polaroids */
   .gallery{background:var(--paper-2);overflow:hidden}
-  .marquee{display:flex;width:max-content;gap:34px;padding:30px 0 50px;animation:wall 60s linear infinite}
+  .marquee{display:flex;width:max-content;gap:34px;padding:30px 0 50px;animation:wall 115s linear infinite}
   .marquee:hover{animation-play-state:paused}
   .marquee .polaroid{position:relative;width:260px;flex:none}
   .marquee .polaroid:nth-child(odd){transform:rotate(-3deg)}
   .marquee .polaroid:nth-child(even){transform:rotate(2.5deg) translateY(22px)}
   @keyframes wall{to{transform:translateX(-50%)}}
-  @media (max-width:760px){.marquee .polaroid{width:200px;padding:9px 9px 38px}.marquee{gap:22px;animation-duration:45s}}
+  @media (max-width:760px){.marquee .polaroid{width:200px;padding:9px 9px 38px}.marquee{gap:22px;animation-duration:90s}}
   @media (prefers-reduced-motion:reduce){.marquee{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.marquee [aria-hidden]{display:none}}
 
   /* FAQ */
@@ -503,6 +503,13 @@
     <figure class="polaroid"><img src="img/p04.jpg" alt="Dachshund caramelo de pelo longo" loading="lazy"><figcaption>olhar de pidão</figcaption></figure>
     <figure class="polaroid"><img src="img/p08.jpg" alt="Cão de pelo cinza e olhos azuis" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
     <figure class="polaroid"><img src="img/malinois.jpg" alt="Filhote de pastor belga malinois de língua de fora na grama" loading="lazy"><figcaption>língua de fora</figcaption></figure>
+    <figure class="polaroid"><img src="img/m2.jpg" alt="Três cães pequenos olhando para cima no piso da sala" loading="lazy"><figcaption>a turminha</figcaption></figure>
+    <figure class="polaroid"><img src="img/m3.jpg" alt="Chihuahua de pelo longo com as patas no sofá" loading="lazy"><figcaption>dono do sofá</figcaption></figure>
+    <figure class="polaroid"><img src="img/m1.jpg" alt="Gatinha escaminha sentada na cama" loading="lazy"><figcaption>olhar de rainha</figcaption></figure>
+    <figure class="polaroid"><img src="img/m5.jpg" alt="Bulldog francês sorrindo, olhando para a câmera" loading="lazy"><figcaption>sorriso de frenchie</figcaption></figure>
+    <figure class="polaroid"><img src="img/m4.jpg" alt="Chihuahua deitado na cama entre as cobertas" loading="lazy"><figcaption>hora da soneca</figcaption></figure>
+    <figure class="polaroid"><img src="img/m6.jpg" alt="Pug deitado numa manta rosa" loading="lazy"><figcaption>manta favorita</figcaption></figure>
+    <figure class="polaroid"><img src="img/m7.jpg" alt="Cão de pelo cinza e olhos azuis em pé na cama" loading="lazy"><figcaption>cheguei!</figcaption></figure>
     <!-- same set again so the loop is seamless -->
     <figure class="polaroid" aria-hidden="true"><img src="img/p05.jpg" alt="" loading="lazy"><figcaption>hora do petisco!</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/p06.jpg" alt="" loading="lazy"><figcaption>caminha aprovada</figcaption></figure>
@@ -512,6 +519,13 @@
     <figure class="polaroid" aria-hidden="true"><img src="img/p04.jpg" alt="" loading="lazy"><figcaption>olhar de pidão</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/p08.jpg" alt="" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/malinois.jpg" alt="" loading="lazy"><figcaption>língua de fora</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m2.jpg" alt="" loading="lazy"><figcaption>a turminha</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m3.jpg" alt="" loading="lazy"><figcaption>dono do sofá</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m1.jpg" alt="" loading="lazy"><figcaption>olhar de rainha</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m5.jpg" alt="" loading="lazy"><figcaption>sorriso de frenchie</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m4.jpg" alt="" loading="lazy"><figcaption>hora da soneca</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m6.jpg" alt="" loading="lazy"><figcaption>manta favorita</figcaption></figure>
+    <figure class="polaroid" aria-hidden="true"><img src="img/m7.jpg" alt="" loading="lazy"><figcaption>cheguei!</figcaption></figure>
   </div>
 </section>
 
