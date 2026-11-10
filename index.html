@@ -159,6 +159,9 @@
   .story .reveal > blockquote{margin-top:26px;padding:22px 26px;border-left:4px solid var(--orange);background:var(--white);border-radius:0 16px 16px 0;font-family:Fraunces,serif;font-style:italic;font-size:1.25rem;color:var(--ink)}
   .story .sign{margin-top:18px}
   .cred{display:flex;align-items:center;gap:14px;margin-top:28px;padding:16px 20px;border:2px dashed var(--green);border-radius:16px;color:var(--ink)}
+  .story .amora{position:relative;float:right;width:210px;margin:6px 0 14px 26px;transform:rotate(4deg);padding:10px 10px 40px}
+  .story .amora figcaption{font-size:1.2rem}
+  @media (max-width:560px){.story .amora{float:none;width:230px;margin:22px auto 6px}}
   .cred svg{width:34px;flex:none;color:var(--green)}
   @media (max-width:900px){.story .wrap{grid-template-columns:1fr;gap:48px}.story .polaroid{margin-inline:auto}}
 
@@ -472,6 +475,7 @@
     <div class="reveal">
       <span class="eyebrow">Nossa história</span>
       <h2 style="margin-top:12px">Nasceu do amor. Cresce com <em>conhecimento</em>.</h2>
+      <figure class="polaroid amora"><img src="img/ruiva.jpg" alt="Amora, Australian Cattle Dog ruiva, deitada na grama com a língua de fora" loading="lazy"><figcaption>a Amora ♥</figcaption></figure>
       <p>Por trás da Dompet existe um sonho, uma família e uma cachorra chamada <strong>Amora</strong>, uma Australian Cattle Dog que inspirou até o laranja da nossa marca.</p>
       <p><strong>Isabela</strong>, estudante de Medicina Veterinária, é apaixonada por comportamento animal, adestramento e linguagem corporal canina. A ideia ganhou força quando sua mãe, a famosa <strong>Tia Gi</strong>, acreditou no sonho e decidiu construir tudo junto.</p>
       <div class="cred">
@@ -499,7 +503,6 @@
     <figure class="polaroid"><img src="img/p04.jpg" alt="Dachshund caramelo de pelo longo" loading="lazy"><figcaption>olhar de pidão</figcaption></figure>
     <figure class="polaroid"><img src="img/p08.jpg" alt="Cão de pelo cinza e olhos azuis" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
     <figure class="polaroid"><img src="img/malinois.jpg" alt="Filhote de pastor belga malinois de língua de fora na grama" loading="lazy"><figcaption>língua de fora</figcaption></figure>
-    <figure class="polaroid"><img src="img/ruiva.jpg" alt="Cachorra ruiva deitada na grama depois do passeio, com guia roxa" loading="lazy"><figcaption>depois do passeio</figcaption></figure>
     <!-- same set again so the loop is seamless -->
     <figure class="polaroid" aria-hidden="true"><img src="img/p05.jpg" alt="" loading="lazy"><figcaption>hora do petisco!</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/p06.jpg" alt="" loading="lazy"><figcaption>caminha aprovada</figcaption></figure>
@@ -509,7 +512,6 @@
     <figure class="polaroid" aria-hidden="true"><img src="img/p04.jpg" alt="" loading="lazy"><figcaption>olhar de pidão</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/p08.jpg" alt="" loading="lazy"><figcaption>feliz da vida</figcaption></figure>
     <figure class="polaroid" aria-hidden="true"><img src="img/malinois.jpg" alt="" loading="lazy"><figcaption>língua de fora</figcaption></figure>
-    <figure class="polaroid" aria-hidden="true"><img src="img/ruiva.jpg" alt="" loading="lazy"><figcaption>depois do passeio</figcaption></figure>
   </div>
 </section>
 
