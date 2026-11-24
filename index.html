@@ -328,7 +328,10 @@
   .f > span,.ficha legend{font-weight:700;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft)}
   .f input{font:600 1.75rem/1.2 Caveat,cursive;color:var(--ink);border:0;border-bottom:2px dashed #3a221659;border-radius:0;background:transparent;padding:2px 2px 4px;width:100%;min-width:0}
   .f input::placeholder{color:#3a221640}
-  .f input[type=date]{font:500 1.02rem Figtree,sans-serif;padding:8px 2px}
+  /* iOS draws an empty date input as nothing, so it gets a visible tappable box */
+  .f input[type=date]{-webkit-appearance:none;appearance:none;font:600 1.05rem Figtree,sans-serif;color:var(--ink);min-height:50px;padding:10px 12px;margin-top:4px;border:2px solid #3a221640;border-radius:14px;background:#FFF5EA;display:block}
+  .f input[type=date]::-webkit-date-and-time-value{text-align:left}
+  .f input[type=date]:focus{border:2px solid var(--orange)}
   .f input:focus{outline:0;border-bottom:2px solid var(--orange)}
   .ficha fieldset{border:0;padding:0;min-width:0}
   .ficha legend{padding:0;margin-bottom:9px}
